@@ -65,9 +65,12 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
-window.addEventListener('load', function() {
-  document.getElementById('loader').classList.add('hide');
-  setTimeout(() => {
-    document.getElementById('loader').style.display = 'none';
-  }, 600);
-});
+ document.addEventListener('DOMContentLoaded', function() {
+    // Hide loader after a short delay for smoothness
+    setTimeout(function() {
+      document.getElementById('loader').classList.add('hide');
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+      }, 500);
+    }, 400); // Adjust delay as needed (ms)
+  });
