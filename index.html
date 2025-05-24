@@ -10,12 +10,70 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <style>
+    /* Additional styles for the languages section */
+    .languages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .language-item {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .language-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+    
+    .language-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .language-level {
+      font-size: 0.9em;
+      opacity: 0.9;
+      background: rgba(255,255,255,0.2);
+      padding: 5px 15px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    
+    .proficiency-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 4px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    
+    .proficiency-fill {
+      height: 100%;
+      background: rgba(255,255,255,0.8);
+      border-radius: 4px;
+      transition: width 0.8s ease;
+    }
+    
+    .native { width: 100%; }
+    .fluent { width: 85%; }
+    .basic { width: 40%; }
+  </style>
 </head>
 <body>
-     <div id="loader">
+  <div id="loader">
     <img src="https://cdn.dribbble.com/userupload/25192977/file/original-f2508a9b57f4661f930c05ea046c6d5c.gif" alt="Loading..." />
   </div>
-  <canvas id="bg"></canvas>
   <canvas id="bg"></canvas>
   
   <header>
@@ -29,6 +87,7 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#languages">Languages</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -45,11 +104,11 @@
     <ul>
       <li>BSc (Hons) in Software Engineering – NIBM, Sri Lanka</li>
       <li>Foundation in Marketing – SLIM, Sri Lanka</li>
-      <li> English Foundation NIBM</li> 
-      <li> Information Technology Foundation Esoft</li>
-      <li> GCE Ordinary Level</li>
-     <li> GCE Advanced Level Qualified</li>
-     <li>Certificates: Web Design (UoM), Risk Management (Oxford), Social Media Marketing (Alison)..</li>
+      <li>English Foundation NIBM</li> 
+      <li>Information Technology Foundation Esoft</li>
+      <li>GCE Ordinary Level</li>
+      <li>GCE Advanced Level Qualified</li>
+      <li>Certificates: Web Design (UoM), Risk Management (Oxford), Social Media Marketing (Alison)..</li>
     </ul>
   </section>
 
@@ -58,15 +117,14 @@
     <div class="card">
       <h3><b>Email Manager / Social Media Marketing</b></h3>
       <p>Osaka Information Technology, Colombo (2023 – 2025)</p>
-     
     </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <div class="grid">
-        <div class="skill">Marketing</div>
-         <div class="skill">Software Engineering</div>
+      <div class="skill">Marketing</div>
+      <div class="skill">Software Engineering</div>
       <div class="skill">Digital Marketing</div>
       <div class="skill">SEO & SEM</div>
       <div class="skill">JavaScript</div>
@@ -74,8 +132,45 @@
       <div class="skill">Linux</div>
       <div class="skill">C#</div>
       <div class="skill">C</div>
-     <div class="skill">Etc..</div>
-     
+      <div class="skill">Etc..</div>
+    </div>
+  </section>
+
+  <section id="languages">
+    <h2>Languages</h2>
+    <p>Multilingual communication abilities across diverse cultural contexts:</p>
+    <div class="languages-grid">
+      <div class="language-item">
+        <div class="language-name">🇬🇧 English</div>
+        <div class="language-level">Fluent</div>
+        <div class="proficiency-bar">
+          <div class="proficiency-fill fluent"></div>
+        </div>
+      </div>
+      
+      <div class="language-item">
+        <div class="language-name">🇱🇰 Sinhala</div>
+        <div class="language-level">Native</div>
+        <div class="proficiency-bar">
+          <div class="proficiency-fill native"></div>
+        </div>
+      </div>
+      
+      <div class="language-item">
+        <div class="language-name">🇱🇰 Tamil</div>
+        <div class="language-level">Native</div>
+        <div class="proficiency-bar">
+          <div class="proficiency-fill native"></div>
+        </div>
+      </div>
+      
+      <div class="language-item">
+        <div class="language-name">🇫🇷 French</div>
+        <div class="language-level">Basic</div>
+        <div class="proficiency-bar">
+          <div class="proficiency-fill basic"></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -91,24 +186,43 @@
   <section id="contact">
     <h2>Contact</h2>
     <ul>
-      <li><a href="mailto:younusfowzer2005@gmail.com">📧 Personal Email </a>
-</li>
-      <li> <a href="mailto:Gadse241f-049@student.nibm.lk">📧 Student Mail  </a></li>
-      <li><a href="mailto:Gaccs235f-11@student.nibm.lk">📧 Student Mail II  </a></li></li>
-      
+      <li><a href="mailto:younusfowzer2005@gmail.com">📧 Personal Email</a></li>
+      <li><a href="mailto:Gadse241f-049@student.nibm.lk">📧 Student Mail</a></li>
+      <li><a href="mailto:Gaccs235f-11@student.nibm.lk">📧 Student Mail II</a></li>
       <li>🔗 <a href="https://www.linkedin.com/in/younus-fowzer">LinkedIn</a></li>
       <li>💻 <a href="https://github.com/Younusfowzer">GitHub</a></li>
-       <li>💻 <a href="">GitHub II</a></li>
-        <li style="color: blue;">WES</li>
-        <li style="color: blue;">Twitter</li>
+      <li>💻 <a href="">GitHub II</a></li>
+      <li style="color: blue;">WES</li>
+      <li style="color: blue;">Twitter</li>
     </ul>
     <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-79.42%2C43.65%2C-79.38%2C43.67&amp;layer=mapnik" style="width: 100%; height: 300px; border: none;"></iframe>
   </section>
 
   <footer>
-    <p>&copy; 2025 Younus Fowzer | Created by Younus </p>
+    <p>&copy; 2025 Younus Fowzer | Created by Younus</p>
   </footer>
 
+  <script>
+    // Animation for language proficiency bars
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const bars = entry.target.querySelectorAll('.proficiency-fill');
+            bars.forEach(bar => {
+              bar.style.width = bar.classList.contains('native') ? '100%' : 
+                               bar.classList.contains('fluent') ? '85%' : '40%';
+            });
+          }
+        });
+      }, { threshold: 0.5 });
+
+      const languagesSection = document.getElementById('languages');
+      if (languagesSection) {
+        observer.observe(languagesSection);
+      }
+    });
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
