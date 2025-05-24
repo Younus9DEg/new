@@ -68,6 +68,165 @@
     .native { width: 100%; }
     .fluent { width: 65%; }
     .basic { width: 40%; }
+
+    /* Professional Contact Section Styles */
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .contact-intro {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .contact-intro h2 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-intro p {
+      font-size: 1.1em;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .contact-category {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .contact-category h3 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.3em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-category-icon {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 12px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      text-decoration: none;
+      color: #555;
+      border-bottom: 1px solid #eee;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:last-child {
+      border-bottom: none;
+    }
+
+    .contact-link:hover {
+      color: #667eea;
+      padding-left: 10px;
+      text-decoration: none;
+    }
+
+    .contact-link-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f9fa;
+      border-radius: 50%;
+      font-size: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover .contact-link-icon {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .contact-link-text {
+      flex: 1;
+    }
+
+    .contact-link-label {
+      font-weight: 500;
+      font-size: 0.95em;
+    }
+
+    .contact-link-value {
+      font-size: 0.85em;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    .map-container {
+      margin-top: 40px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .map-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 25px;
+      font-weight: 500;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      display: block;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .contact-category {
+        padding: 20px;
+      }
+      
+      .contact-intro h2 {
+        font-size: 2em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -184,18 +343,112 @@
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <ul>
-      <li><a href="mailto:younusfowzer2005@gmail.com">📧 Personal Email</a></li>
-      <li><a href="mailto:Gadse241f-049@student.nibm.lk">📧 Student Mail</a></li>
-      <li><a href="mailto:Gaccs235f-11@student.nibm.lk">📧 Student Mail II</a></li>
-      <li>🔗 <a href="https://www.linkedin.com/in/younus-fowzer">LinkedIn</a></li>
-      <li>💻 <a href="https://github.com/Younusfowzer">GitHub</a></li>
-      <li>💻 <a href="">GitHub II</a></li>
-      <li style="color: blue;">WES</li>
-      <li style="color: blue;">Twitter</li>
-    </ul>
-    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-79.42%2C43.65%2C-79.38%2C43.67&amp;layer=mapnik" style="width: 100%; height: 300px; border: none;"></iframe>
+    <div class="contact-container">
+      <div class="contact-intro">
+        <h2>Let's Connect</h2>
+        <p>I'm always open to discussing new opportunities, collaborations, or simply connecting with fellow professionals. Feel free to reach out through any of the channels below.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-category">
+          <h3>
+            <div class="contact-category-icon">📧</div>
+            Email Communications
+          </h3>
+          <a href="mailto:younusfowzer2005@gmail.com" class="contact-link">
+            <div class="contact-link-icon">✉</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Personal Email</div>
+              <div class="contact-link-value">younusfowzer2005@gmail.com</div>
+            </div>
+          </a>
+          <a href="mailto:Gadse241f-049@student.nibm.lk" class="contact-link">
+            <div class="contact-link-icon">🎓</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Academic Email</div>
+              <div class="contact-link-value">Gadse241f-049@student.nibm.lk</div>
+            </div>
+          </a>
+          <a href="mailto:Gaccs235f-11@student.nibm.lk" class="contact-link">
+            <div class="contact-link-icon">🎓</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Secondary Academic</div>
+              <div class="contact-link-value">Gaccs235f-11@student.nibm.lk</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="contact-category">
+          <h3>
+            <div class="contact-category-icon">🌐</div>
+            Professional Networks
+          </h3>
+          <a href="https://www.linkedin.com/in/younus-fowzer" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💼</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">LinkedIn Profile</div>
+              <div class="contact-link-value">Connect professionally</div>
+            </div>
+          </a>
+          <a href="https://github.com/Younusfowzer" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💻</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">GitHub Primary</div>
+              <div class="contact-link-value">View my code repositories</div>
+            </div>
+          </a>
+          <a href="#" class="contact-link">
+            <div class="contact-link-icon">⚡</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">GitHub Secondary</div>
+              <div class="contact-link-value">Additional projects</div>
+            </div>
+          </a>
+          <a href="#" class="contact-link">
+            <div class="contact-link-icon">🎓</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">WES </div>
+              <div class="contact-link-value">World Education Service</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="contact-category">
+          <h3>
+            <div class="contact-category-icon">📱</div>
+            Social & Creative
+          </h3>
+          <a href="https://www.instagram.com/art_guy25" target="_blank" class="contact-link">
+            <div class="contact-link-icon">🎨</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Instagram Art</div>
+              <div class="contact-link-value">@art_guy25</div>
+            </div>
+          </a>
+          <a href="#" class="contact-link">
+            <div class="contact-link-icon">🐦</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Twitter</div>
+              <div class="contact-link-value">Professional updates</div>
+            </div>
+          </a>
+          <a href="#" class="contact-link">
+            <div class="contact-link-icon">🌍</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Portfolio Website</div>
+              <div class="contact-link-value">Extended work showcase</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <div class="map-header">
+          📍 Currently Based in Toronto, Canada
+        </div>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-79.42%2C43.65%2C-79.38%2C43.67&amp;layer=mapnik"></iframe>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -220,6 +473,34 @@
       const languagesSection = document.getElementById('languages');
       if (languagesSection) {
         observer.observe(languagesSection);
+      }
+
+      // Contact section animations
+      const contactObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const categories = entry.target.querySelectorAll('.contact-category');
+            categories.forEach((category, index) => {
+              setTimeout(() => {
+                category.style.opacity = '1';
+                category.style.transform = 'translateY(0)';
+              }, index * 150);
+            });
+          }
+        });
+      }, { threshold: 0.2 });
+
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        // Set initial state for animation
+        const categories = contactSection.querySelectorAll('.contact-category');
+        categories.forEach(category => {
+          category.style.opacity = '0';
+          category.style.transform = 'translateY(30px)';
+          category.style.transition = 'all 0.6s ease';
+        });
+        
+        contactObserver.observe(contactSection);
       }
     });
   </script>
