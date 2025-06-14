@@ -159,11 +159,26 @@ header {
   padding: 5rem 1rem 1rem;
 }
 
-h1 {
+/* Modified h1 to be header h1 for specificity and added animation */
+header h1 {
   font-size: 3rem;
   margin: 0;
   color: var(--text-primary);
+  position: relative;
+
+  animation-name: rgb-glow-animation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  text-shadow:
+    1px 1px 0px rgba(0,0,0,0.2),
+    2px 2px 0px rgba(0,0,0,0.15),
+    3px 3px 0px rgba(0,0,0,0.1),
+    0 0 10px var(--text-nav-link-hover); /* Fallback glow */
 }
+
+/* Generic p, h2, etc. styles should be checked if they were intended to be global or scoped */
+/* For now, assuming this h1 was the main page title in the header */
 
 p { /* General paragraph text */
   font-size: 1.2rem;
@@ -197,7 +212,7 @@ section {
   margin: auto;
 }
 
-h2 {
+h2 { /* This is a generic h2, ensure it's what's intended */
   font-size: 2rem;
   border-bottom: 2px solid var(--border-heading);
   padding-bottom: 0.5rem;
@@ -525,4 +540,14 @@ body.light-mode .map-container {
     width: 100%; /* from inline */
     height: 450px; /* from inline */
     border: none; /* from inline */
+}
+
+@keyframes rgb-glow-animation {
+  0% { text-shadow: 1px 1px 0px rgba(0,0,0,0.2), 2px 2px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.1), 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000; }
+  16% { text-shadow: 1px 1px 0px rgba(0,0,0,0.2), 2px 2px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.1), 0 0 10px #ff7f00, 0 0 15px #ff7f00, 0 0 20px #ff7f00; }
+  33% { text-shadow: 1px 1px 0px rgba(0,0,0,0.2), 2px 2px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.1), 0 0 10px #ffff00, 0 0 15px #ffff00, 0 0 20px #ffff00; }
+  50% { text-shadow: 1px 1px 0px rgba(0,0,0,0.2), 2px 2px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.1), 0 0 10px #00ff00, 0 0 15px #00ff00, 0 0 20px #00ff00; }
+  66% { text-shadow: 1px 1px 0px rgba(0,0,0,0.2), 2px 2px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.1), 0 0 10px #0000ff, 0 0 15px #0000ff, 0 0 20px #0000ff; }
+  83% { text-shadow: 1px 1px 0px rgba(0,0,0,0.2), 2px 2px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.1), 0 0 10px #4b0082, 0 0 15px #4b0082, 0 0 20px #4b0082; }
+  100% { text-shadow: 1px 1px 0px rgba(0,0,0,0.2), 2px 2px 0px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.1), 0 0 10px #8f00ff, 0 0 15px #8f00ff, 0 0 20px #8f00ff; }
 }
