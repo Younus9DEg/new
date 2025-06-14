@@ -161,18 +161,18 @@ header {
 
 /* Modified h1 to be header h1 for specificity and added animation */
 header h1 {
-  font-size: 3rem;
-  margin: 0;
-  color: var(--text-primary);
-  position: relative;
+  font-size: 3rem; 
+  margin: 0; 
+  color: var(--text-primary); 
+  position: relative; 
 
   animation-name: rgb-glow-animation;
-  animation-duration: 10s;
+  animation-duration: 10s; 
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  text-shadow:
-    1px 1px 0px rgba(0,0,0,0.2),
-    2px 2px 0px rgba(0,0,0,0.15),
+  text-shadow: 
+    1px 1px 0px rgba(0,0,0,0.2), 
+    2px 2px 0px rgba(0,0,0,0.15), 
     3px 3px 0px rgba(0,0,0,0.1),
     0 0 10px var(--text-nav-link-hover); /* Fallback glow */
 }
@@ -322,7 +322,7 @@ footer {
   top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  background: var(--loader-bg);
+  background: var(--loader-bg); 
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -342,7 +342,7 @@ footer {
 }
 
 /* Styles potentially from index.html <style> block */
-/* These assume that if these styles were in index.html, they are either removed
+/* These assume that if these styles were in index.html, they are either removed 
    or these overrides are specific enough. Ideally, move them from index.html to here. */
 
 .navbar { /* This is a Bootstrap class, might be styled inline or in <style> */
