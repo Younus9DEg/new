@@ -65,12 +65,54 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
- document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function() {
     // Hide loader after a short delay for smoothness
+    // This existing loader logic should be preserved.
     setTimeout(function() {
-      document.getElementById('loader').classList.add('hide');
-      setTimeout(() => {
-        document.getElementById('loader').style.display = 'none';
-      }, 500);
+      const loader = document.getElementById('loader');
+      if (loader) {
+        loader.classList.add('hide');
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 500);
+      }
     }, 400); // Adjust delay as needed (ms)
-  });
+
+    // === THEME TOGGLE LOGIC ===
+    const themeToggleButton = document.getElementById('theme-toggle-button');
+    const body = document.body;
+
+    // Function to update button icon based on theme
+    const updateToggleButtonIcon = (isLightMode) => {
+        if (themeToggleButton) {
+            themeToggleButton.textContent = isLightMode ? '☀️' : '🌙';
+        }
+    };
+
+    // Function to apply the stored theme or default
+    const applyInitialTheme = () => {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'light') {
+            body.classList.add('light-mode');
+            updateToggleButtonIcon(true);
+        } else {
+            // Default to dark mode if no theme is stored or if it's 'dark'
+            body.classList.remove('light-mode'); // Explicitly remove if not light
+            updateToggleButtonIcon(false);
+        }
+    };
+
+    // Apply theme on initial load
+    applyInitialTheme();
+
+    // Add event listener for the toggle button
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLightMode = body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+            updateToggleButtonIcon(isLightMode);
+        });
+    }
+});
